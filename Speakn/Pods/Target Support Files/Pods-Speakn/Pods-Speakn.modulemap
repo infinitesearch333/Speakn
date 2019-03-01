@@ -1,0 +1,6 @@
+framework module Pods_Speakn {
+  umbrella header "Pods-Speakn-umbrella.h"
+
+  export *
+  module * { export * }
+}

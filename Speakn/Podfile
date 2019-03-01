@@ -1,0 +1,6 @@
+target 'Speakn' do
+  use_frameworks!
+
+  # Pods for Speakn
+  pod "SwiftyDropbox"
+end
