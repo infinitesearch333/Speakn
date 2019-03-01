@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2074C9E90742A41CC57A69D1 /* Pods_Speakn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEB6FCC2ADFEE7B96F10B112 /* Pods_Speakn.framework */; };
+		BA57C3EB2229C3B700700891 /* Ubuntu-L.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BA57C3EA2229C3B700700891 /* Ubuntu-L.ttf */; };
 		BA96A8B42229C0D500D3CCC9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA96A8B32229C0D500D3CCC9 /* AppDelegate.swift */; };
 		BA96A8B62229C0D500D3CCC9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA96A8B52229C0D500D3CCC9 /* ViewController.swift */; };
 		BA96A8B92229C0D500D3CCC9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA96A8B72229C0D500D3CCC9 /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 /* Begin PBXFileReference section */
 		36CBC10359A3A451030CB198 /* Pods-Speakn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Speakn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Speakn/Pods-Speakn.debug.xcconfig"; sourceTree = "<group>"; };
 		AEB6FCC2ADFEE7B96F10B112 /* Pods_Speakn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Speakn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA57C3EA2229C3B700700891 /* Ubuntu-L.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-L.ttf"; sourceTree = "<group>"; };
 		BA96A8B02229C0D500D3CCC9 /* Speakn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Speakn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA96A8B32229C0D500D3CCC9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA96A8B52229C0D500D3CCC9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +59,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		BA57C3EC2229C3BC00700891 /* App_Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				BA57C3EA2229C3B700700891 /* Ubuntu-L.ttf */,
+			);
+			path = App_Fonts;
+			sourceTree = "<group>";
+		};
 		BA96A8A72229C0D400D3CCC9 = {
 			isa = PBXGroup;
 			children = (
@@ -78,6 +88,7 @@
 		BA96A8B22229C0D500D3CCC9 /* Speakn */ = {
 			isa = PBXGroup;
 			children = (
+				BA57C3EC2229C3BC00700891 /* App_Fonts */,
 				BA96A8B32229C0D500D3CCC9 /* AppDelegate.swift */,
 				BA96A8B52229C0D500D3CCC9 /* ViewController.swift */,
 				BA96A8B72229C0D500D3CCC9 /* Main.storyboard */,
@@ -148,6 +159,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA57C3EB2229C3B700700891 /* Ubuntu-L.ttf in Resources */,
 				BA96A8BE2229C0D600D3CCC9 /* LaunchScreen.storyboard in Resources */,
 				BA96A8BB2229C0D600D3CCC9 /* Assets.xcassets in Resources */,
 				BA96A8B92229C0D500D3CCC9 /* Main.storyboard in Resources */,
