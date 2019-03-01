@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -9,20 +9,160 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Ubuntu-L.ttf">
+            <string>Ubuntu-Light</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--First_Page_VC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" userLabel="First_Page_VC" customClass="ViewController" customModule="Speakn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bka-aA-CWU" userLabel="Main_Area">
+                                <rect key="frame" x="68.333333333333343" y="151" width="277.33333333333326" height="434"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Speakn_Logo" translatesAutoresizingMaskIntoConstraints="NO" id="jQF-nb-LG7" userLabel="Logo">
+                                        <rect key="frame" x="73.333333333333329" y="0.0" width="130.66666666666669" height="91"/>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2cj-SP-0PZ" userLabel="Padding_One">
+                                        <rect key="frame" x="0.0" y="91" width="277.33333333333331" height="21.666666666666671"/>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set up with" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nfc-JY-iHN" userLabel="Label_One">
+                                        <rect key="frame" x="0.0" y="112.66666666666669" width="277.33333333333331" height="17.333333333333343"/>
+                                        <fontDescription key="fontDescription" name="Ubuntu-Light" family="Ubuntu" pointSize="16"/>
+                                        <color key="textColor" red="0.64313725490196072" green="0.61960784313725492" blue="0.61960784313725492" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jQc-Nl-4KT" userLabel="Padding_Two">
+                                        <rect key="frame" x="0.0" y="130" width="277.33333333333331" height="22"/>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D9W-MN-Zye" userLabel="Dropbox_Button">
+                                        <rect key="frame" x="0.0" y="152" width="277.33333333333331" height="47.666666666666657"/>
+                                        <fontDescription key="fontDescription" name="Ubuntu-Light" family="Ubuntu" pointSize="16"/>
+                                        <state key="normal" title="Dropbox" backgroundImage="Dropbox_Button">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YTe-8F-j9N" userLabel="Padding_Three">
+                                        <rect key="frame" x="0.0" y="199.66666666666669" width="277.33333333333331" height="21.666666666666657"/>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ia-KR-Q3s" userLabel="Google_Drive_Button">
+                                        <rect key="frame" x="0.0" y="221.33333333333331" width="277.33333333333331" height="47.666666666666686"/>
+                                        <fontDescription key="fontDescription" name="Ubuntu-Light" family="Ubuntu" pointSize="16"/>
+                                        <state key="normal" title="Drive" backgroundImage="Drive_Button">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U9F-1X-vbj" userLabel="Padding_Four">
+                                        <rect key="frame" x="0.0" y="269" width="277.33333333333331" height="21.666666666666686"/>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Or" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zaU-fz-sSo" userLabel="Label_Two">
+                                        <rect key="frame" x="0.0" y="290.66666666666669" width="277.33333333333331" height="17.666666666666686"/>
+                                        <fontDescription key="fontDescription" name="Ubuntu-Light" family="Ubuntu" pointSize="16"/>
+                                        <color key="textColor" red="0.64313725490196072" green="0.61960784313725492" blue="0.61960784313725492" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Sc-bC-f1f" userLabel="Padding_Five">
+                                        <rect key="frame" x="0.0" y="308.33333333333331" width="277.33333333333331" height="21.666666666666686"/>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bLH-8J-p59" userLabel="Local_Files_Button">
+                                        <rect key="frame" x="0.0" y="330" width="277.33333333333331" height="47.666666666666686"/>
+                                        <fontDescription key="fontDescription" name="Ubuntu-Light" family="Ubuntu" pointSize="16"/>
+                                        <state key="normal" title="Local Files" backgroundImage="Files_Button">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TjN-cn-Mxc" userLabel="Padding_Six">
+                                        <rect key="frame" x="0.0" y="377.66666666666663" width="277.33333333333331" height="21.666666666666686"/>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ebd-C8-fwM" userLabel="Tutorial_Button">
+                                        <rect key="frame" x="0.0" y="399.33333333333337" width="277.33333333333331" height="34.666666666666686"/>
+                                        <fontDescription key="fontDescription" name="Ubuntu-Light" family="Ubuntu" pointSize="16"/>
+                                        <state key="normal" title="How it works">
+                                            <color key="titleColor" red="0.64313725490196072" green="0.61960784313725492" blue="0.61960784313725492" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="jQF-nb-LG7" firstAttribute="centerX" secondItem="bka-aA-CWU" secondAttribute="centerX" id="1vb-fA-hMz"/>
+                                    <constraint firstItem="Nfc-JY-iHN" firstAttribute="width" secondItem="bka-aA-CWU" secondAttribute="width" id="23M-xp-aH1"/>
+                                    <constraint firstItem="YTe-8F-j9N" firstAttribute="top" secondItem="D9W-MN-Zye" secondAttribute="bottom" id="2gU-HA-N7j"/>
+                                    <constraint firstItem="jQc-Nl-4KT" firstAttribute="height" secondItem="bka-aA-CWU" secondAttribute="height" multiplier="0.05" id="3AZ-Ch-j5z"/>
+                                    <constraint firstItem="jQF-nb-LG7" firstAttribute="top" secondItem="bka-aA-CWU" secondAttribute="top" id="3zY-s1-hps"/>
+                                    <constraint firstItem="D9W-MN-Zye" firstAttribute="width" secondItem="bka-aA-CWU" secondAttribute="width" id="4eu-mj-VPp"/>
+                                    <constraint firstItem="bLH-8J-p59" firstAttribute="centerX" secondItem="bka-aA-CWU" secondAttribute="centerX" id="6SI-7i-zJN"/>
+                                    <constraint firstItem="Nfc-JY-iHN" firstAttribute="centerX" secondItem="bka-aA-CWU" secondAttribute="centerX" id="7J6-w2-fMG"/>
+                                    <constraint firstItem="6ia-KR-Q3s" firstAttribute="height" secondItem="bka-aA-CWU" secondAttribute="height" multiplier="0.11" id="7ZW-Ff-03L"/>
+                                    <constraint firstItem="jQF-nb-LG7" firstAttribute="width" secondItem="bka-aA-CWU" secondAttribute="width" multiplier="0.47" id="7gA-QC-xsD"/>
+                                    <constraint firstItem="YTe-8F-j9N" firstAttribute="width" secondItem="bka-aA-CWU" secondAttribute="width" id="AgI-cO-GLS"/>
+                                    <constraint firstItem="jQc-Nl-4KT" firstAttribute="centerX" secondItem="bka-aA-CWU" secondAttribute="centerX" id="Ags-YI-hsy"/>
+                                    <constraint firstItem="6ia-KR-Q3s" firstAttribute="centerX" secondItem="bka-aA-CWU" secondAttribute="centerX" id="Azb-nB-t9L"/>
+                                    <constraint firstItem="jQF-nb-LG7" firstAttribute="height" secondItem="bka-aA-CWU" secondAttribute="height" multiplier="0.21" id="FjO-Ec-YFc"/>
+                                    <constraint firstItem="TjN-cn-Mxc" firstAttribute="width" secondItem="bka-aA-CWU" secondAttribute="width" id="IMa-Xg-2w2"/>
+                                    <constraint firstItem="Nfc-JY-iHN" firstAttribute="top" secondItem="2cj-SP-0PZ" secondAttribute="bottom" id="Iau-Vc-tUf"/>
+                                    <constraint firstItem="U9F-1X-vbj" firstAttribute="height" secondItem="bka-aA-CWU" secondAttribute="height" multiplier="0.05" id="Ik2-Fo-S3P"/>
+                                    <constraint firstItem="zaU-fz-sSo" firstAttribute="height" secondItem="bka-aA-CWU" secondAttribute="height" multiplier="0.04" id="Jjm-dz-Wdr"/>
+                                    <constraint firstItem="jQc-Nl-4KT" firstAttribute="width" secondItem="bka-aA-CWU" secondAttribute="width" id="JnK-8Y-Gfv"/>
+                                    <constraint firstItem="TjN-cn-Mxc" firstAttribute="centerX" secondItem="bka-aA-CWU" secondAttribute="centerX" id="L4B-PN-7Uc"/>
+                                    <constraint firstItem="bLH-8J-p59" firstAttribute="top" secondItem="9Sc-bC-f1f" secondAttribute="bottom" id="LSf-Wt-8zl"/>
+                                    <constraint firstItem="D9W-MN-Zye" firstAttribute="top" secondItem="jQc-Nl-4KT" secondAttribute="bottom" id="Md6-zC-p7a"/>
+                                    <constraint firstItem="TjN-cn-Mxc" firstAttribute="top" secondItem="bLH-8J-p59" secondAttribute="bottom" id="Mg8-oI-jga"/>
+                                    <constraint firstItem="6ia-KR-Q3s" firstAttribute="width" secondItem="bka-aA-CWU" secondAttribute="width" id="Mkd-E4-Vco"/>
+                                    <constraint firstItem="Ebd-C8-fwM" firstAttribute="width" secondItem="bka-aA-CWU" secondAttribute="width" id="MvL-oC-kSd"/>
+                                    <constraint firstItem="2cj-SP-0PZ" firstAttribute="width" secondItem="bka-aA-CWU" secondAttribute="width" id="OiS-fO-bsB"/>
+                                    <constraint firstItem="D9W-MN-Zye" firstAttribute="centerX" secondItem="bka-aA-CWU" secondAttribute="centerX" id="R3j-k2-JnN"/>
+                                    <constraint firstItem="U9F-1X-vbj" firstAttribute="top" secondItem="6ia-KR-Q3s" secondAttribute="bottom" id="RaW-Ga-XeQ"/>
+                                    <constraint firstItem="TjN-cn-Mxc" firstAttribute="height" secondItem="bka-aA-CWU" secondAttribute="height" multiplier="0.05" id="Sga-z7-3N5"/>
+                                    <constraint firstItem="YTe-8F-j9N" firstAttribute="height" secondItem="bka-aA-CWU" secondAttribute="height" multiplier="0.05" id="TYi-Bs-G5j"/>
+                                    <constraint firstItem="2cj-SP-0PZ" firstAttribute="centerX" secondItem="bka-aA-CWU" secondAttribute="centerX" id="WwH-UA-uhI"/>
+                                    <constraint firstItem="Ebd-C8-fwM" firstAttribute="centerX" secondItem="bka-aA-CWU" secondAttribute="centerX" id="YVw-hQ-SB4"/>
+                                    <constraint firstItem="bLH-8J-p59" firstAttribute="width" secondItem="bka-aA-CWU" secondAttribute="width" id="aiI-UO-YjD"/>
+                                    <constraint firstItem="Ebd-C8-fwM" firstAttribute="top" secondItem="TjN-cn-Mxc" secondAttribute="bottom" id="bpe-XO-I6S"/>
+                                    <constraint firstItem="Nfc-JY-iHN" firstAttribute="height" secondItem="bka-aA-CWU" secondAttribute="height" multiplier="0.04" id="cVS-zh-Erx"/>
+                                    <constraint firstItem="zaU-fz-sSo" firstAttribute="top" secondItem="U9F-1X-vbj" secondAttribute="bottom" id="fh2-rM-jP2"/>
+                                    <constraint firstItem="9Sc-bC-f1f" firstAttribute="centerX" secondItem="bka-aA-CWU" secondAttribute="centerX" id="fhD-GX-kfb"/>
+                                    <constraint firstItem="U9F-1X-vbj" firstAttribute="centerX" secondItem="bka-aA-CWU" secondAttribute="centerX" id="gp0-t8-cjB"/>
+                                    <constraint firstItem="YTe-8F-j9N" firstAttribute="centerX" secondItem="bka-aA-CWU" secondAttribute="centerX" id="htL-z0-PNy"/>
+                                    <constraint firstItem="bLH-8J-p59" firstAttribute="height" secondItem="bka-aA-CWU" secondAttribute="height" multiplier="0.11" id="k6P-Rx-byz"/>
+                                    <constraint firstItem="9Sc-bC-f1f" firstAttribute="width" secondItem="bka-aA-CWU" secondAttribute="width" id="kZX-rN-Zuk"/>
+                                    <constraint firstItem="zaU-fz-sSo" firstAttribute="width" secondItem="bka-aA-CWU" secondAttribute="width" id="mBB-cK-dGQ"/>
+                                    <constraint firstItem="Ebd-C8-fwM" firstAttribute="height" secondItem="bka-aA-CWU" secondAttribute="height" multiplier="0.08" id="nLw-Gz-sWy"/>
+                                    <constraint firstItem="2cj-SP-0PZ" firstAttribute="height" secondItem="bka-aA-CWU" secondAttribute="height" multiplier="0.05" id="p3N-Eg-8IT"/>
+                                    <constraint firstItem="jQc-Nl-4KT" firstAttribute="top" secondItem="Nfc-JY-iHN" secondAttribute="bottom" id="qhs-5f-hOg"/>
+                                    <constraint firstItem="D9W-MN-Zye" firstAttribute="height" secondItem="bka-aA-CWU" secondAttribute="height" multiplier="0.11" id="r3e-bG-O1j"/>
+                                    <constraint firstItem="2cj-SP-0PZ" firstAttribute="top" secondItem="jQF-nb-LG7" secondAttribute="bottom" id="roQ-8R-hxc"/>
+                                    <constraint firstItem="U9F-1X-vbj" firstAttribute="width" secondItem="bka-aA-CWU" secondAttribute="width" id="tfn-kd-HK5"/>
+                                    <constraint firstItem="6ia-KR-Q3s" firstAttribute="top" secondItem="YTe-8F-j9N" secondAttribute="bottom" id="ukM-3d-iNQ"/>
+                                    <constraint firstItem="9Sc-bC-f1f" firstAttribute="height" secondItem="bka-aA-CWU" secondAttribute="height" multiplier="0.05" id="xXt-fX-8G7"/>
+                                    <constraint firstItem="9Sc-bC-f1f" firstAttribute="top" secondItem="zaU-fz-sSo" secondAttribute="bottom" id="z12-5E-MN5"/>
+                                    <constraint firstItem="zaU-fz-sSo" firstAttribute="centerX" secondItem="bka-aA-CWU" secondAttribute="centerX" id="zl0-0F-guo"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="bka-aA-CWU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2WA-6a-0DQ"/>
+                            <constraint firstItem="bka-aA-CWU" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="AjA-Ib-VVX"/>
+                            <constraint firstItem="bka-aA-CWU" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.67" id="nek-9v-iZY"/>
+                            <constraint firstItem="bka-aA-CWU" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.59" id="sPL-nA-4a7"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="40.579710144927539" y="25.271739130434785"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Drive_Button" width="277" height="50"/>
+        <image name="Dropbox_Button" width="277" height="50"/>
+        <image name="Files_Button" width="277" height="50"/>
+        <image name="Speakn_Logo" width="125" height="90"/>
+    </resources>
 </document>
