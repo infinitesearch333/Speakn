@@ -11,9 +11,12 @@ import SwiftyDropbox
 
 class Dropbox_File_Browser_VC: UIViewController {
     // Dropbox client will be setup by prepare segue function in first page
-    var dropbox_client: DropboxClient! = nil
+    var dropbox_client: DropboxClient!
+    var dropbox_file_browser: Dropbox_File_Browser!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Setup Dropbox file browser
+        self.dropbox_file_browser = Dropbox_File_Browser(dropbox_client: self.dropbox_client)
     }
 }

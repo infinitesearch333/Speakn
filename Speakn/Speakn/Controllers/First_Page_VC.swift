@@ -32,7 +32,6 @@ class First_Page_VC: UIViewController {
         }
         
         // Redirect user to Dropbox file browser if OAuth2 process was successfully completed
-        print("OAuth2 process was successfully completed")
         performSegue(withIdentifier: "Dropbox_File_Browser_Segue", sender: nil)
     }
     
