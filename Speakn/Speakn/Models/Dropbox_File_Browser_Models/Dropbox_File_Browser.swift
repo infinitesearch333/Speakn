@@ -15,21 +15,19 @@ class Dropbox_File_Browser {
     var next_available_id: UInt32
     
     init() {
-        self.dropbox_client = nil
+        self.dropbox_client = DropboxClientsManager.authorizedClient
         self.directory = []
         self.next_available_id = 0
-    }
-    
-    convenience init(dropbox_client: DropboxClient) {
-        self.init()
-        self.dropbox_client = dropbox_client
         
         //Setup the file browser by passing the root folder which is the top most node of the directory tree
         self.setup_file_browser(id: get_next_available_id(), path: "",
                                 type: Dropbox_Object.Object_Type.Folder, parent_id: nil)
     }
     
-    // FIXME: Clean up & explain what is happening
+    /**
+    Function recursively traverses the user's online Dropbox directory
+    and builds a local version in the structure of a tree
+    */
     private func setup_file_browser(id: UInt32, path: String, type: Dropbox_Object.Object_Type, parent_id: UInt32?){
         let new_object = Dropbox_Object(id: id, path: path, type: type, parent_id: parent_id)
         
@@ -42,10 +40,12 @@ class Dropbox_File_Browser {
             }
             
             for child in children {
+                // Assigning child a reference id
                 let child_id = self.get_next_available_id()
-                var child_type = Dropbox_Object.Object_Type.Unknown
-                
                 new_object.children_ids.append(child_id)
+                
+                // Determining child object type
+                let child_type: Dropbox_Object.Object_Type
                 
                 if child.name.contains("."){
                     if child.name.contains(".csv"){

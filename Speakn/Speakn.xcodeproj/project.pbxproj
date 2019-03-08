@@ -82,13 +82,6 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		BA57C3F22229EF6900700891 /* API_Info */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = API_Info;
-			sourceTree = "<group>";
-		};
 		BA6D68F6222A1B1500E32191 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -128,7 +121,6 @@
 			isa = PBXGroup;
 			children = (
 				BA6D68F6222A1B1500E32191 /* Models */,
-				BA57C3F22229EF6900700891 /* API_Info */,
 				BA57C3EC2229C3BC00700891 /* App_Fonts */,
 				BA96A8B32229C0D500D3CCC9 /* AppDelegate.swift */,
 				BA96A8B72229C0D500D3CCC9 /* Main.storyboard */,

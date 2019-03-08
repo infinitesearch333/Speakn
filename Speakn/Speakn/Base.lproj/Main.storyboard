@@ -172,7 +172,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <segue destination="OiT-Oi-dfE" kind="presentation" identifier="Dropbox_File_Browser_Segue" id="kEf-d8-3Sc"/>
+                        <segue destination="OiT-Oi-dfE" kind="presentation" identifier="Dropbox_File_Browser_Segue" modalTransitionStyle="crossDissolve" id="kEf-d8-3Sc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
