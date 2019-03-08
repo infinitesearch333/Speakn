@@ -13,6 +13,9 @@
         <array key="Ubuntu-L.ttf">
             <string>Ubuntu-Light</string>
         </array>
+        <array key="Ubuntu-R.ttf">
+            <string>Ubuntu</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Dropbox File BrowserVC-->
@@ -22,13 +25,89 @@
                     <view key="view" contentMode="scaleToFill" id="1RX-Ax-RLj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dKq-gk-Zyr" userLabel="Top_Bar">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="73.666666666666671"/>
+                                <subviews>
+                                    <button contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gOY-jW-ujo" userLabel="Back_Button">
+                                        <rect key="frame" x="0.0" y="27.333333333333332" width="49.666666666666664" height="46.333333333333343"/>
+                                        <state key="normal" backgroundImage="Back_Button">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dropbox" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="Ivt-8G-qxj">
+                                        <rect key="frame" x="49.666666666666657" y="34" width="364.33333333333337" height="28.666666666666671"/>
+                                        <fontDescription key="fontDescription" name="Ubuntu-Light" family="Ubuntu" pointSize="24"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.31687238812446594" green="0.60179513692855835" blue="0.92553150653839111" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="Ivt-8G-qxj" firstAttribute="leading" secondItem="gOY-jW-ujo" secondAttribute="trailing" id="F6M-lW-9JU"/>
+                                    <constraint firstAttribute="bottom" secondItem="gOY-jW-ujo" secondAttribute="bottom" id="J4I-Kz-UD6"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ivt-8G-qxj" secondAttribute="trailing" id="PdS-uR-y57"/>
+                                    <constraint firstItem="gOY-jW-ujo" firstAttribute="height" secondItem="dKq-gk-Zyr" secondAttribute="height" multiplier="0.63" id="eZ7-Un-9uB"/>
+                                    <constraint firstItem="Ivt-8G-qxj" firstAttribute="height" secondItem="dKq-gk-Zyr" secondAttribute="height" multiplier="0.39" id="fsb-o9-VqY"/>
+                                    <constraint firstItem="gOY-jW-ujo" firstAttribute="leading" secondItem="dKq-gk-Zyr" secondAttribute="leading" id="jX6-4K-gCn"/>
+                                    <constraint firstItem="gOY-jW-ujo" firstAttribute="width" secondItem="dKq-gk-Zyr" secondAttribute="width" multiplier="0.12" id="olG-le-k0D"/>
+                                    <constraint firstItem="Ivt-8G-qxj" firstAttribute="centerY" secondItem="gOY-jW-ujo" secondAttribute="centerY" constant="-2" id="z8J-lc-HXf"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jrL-0z-co9" userLabel="File_Browser">
+                                <rect key="frame" x="0.0" y="73.666666666666686" width="414" height="662.33333333333326"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Dropbox_Object_Cell" rowHeight="60" id="SP1-ds-nxt">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SP1-ds-nxt" id="Lw1-kW-iJx" userLabel="Dropbox_Object_Cell">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="59.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QIu-lm-cVh" userLabel="Dropbox_Object_Icon">
+                                                    <rect key="frame" x="0.0" y="0.0" width="58" height="59.666666666666664"/>
+                                                </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uih-VZ-Auh">
+                                                    <rect key="frame" x="58" y="0.0" width="356" height="59.666666666666664"/>
+                                                    <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="18"/>
+                                                    <state key="normal" title="Object_Name">
+                                                        <color key="titleColor" red="0.60392156862745094" green="0.58039215686274503" blue="0.58039215686274503" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="QIu-lm-cVh" secondAttribute="bottom" id="09j-kX-4DU"/>
+                                                <constraint firstItem="QIu-lm-cVh" firstAttribute="height" secondItem="Lw1-kW-iJx" secondAttribute="height" id="4Qy-lO-NdQ"/>
+                                                <constraint firstAttribute="bottom" secondItem="Uih-VZ-Auh" secondAttribute="bottom" id="Afn-nG-CH1"/>
+                                                <constraint firstAttribute="trailing" secondItem="Uih-VZ-Auh" secondAttribute="trailing" id="P0n-3P-qNG"/>
+                                                <constraint firstItem="Uih-VZ-Auh" firstAttribute="top" secondItem="Lw1-kW-iJx" secondAttribute="top" id="UZj-NO-qq1"/>
+                                                <constraint firstItem="Uih-VZ-Auh" firstAttribute="leading" secondItem="QIu-lm-cVh" secondAttribute="trailing" id="hk0-XW-hFB"/>
+                                                <constraint firstItem="QIu-lm-cVh" firstAttribute="leading" secondItem="Lw1-kW-iJx" secondAttribute="leading" id="o8g-mR-mic"/>
+                                                <constraint firstItem="QIu-lm-cVh" firstAttribute="width" secondItem="Lw1-kW-iJx" secondAttribute="width" multiplier="0.14" id="q00-1t-mWp"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="jrL-0z-co9" firstAttribute="leading" secondItem="1ef-bu-dZQ" secondAttribute="leading" id="1G0-LT-AG3"/>
+                            <constraint firstItem="1ef-bu-dZQ" firstAttribute="trailing" secondItem="jrL-0z-co9" secondAttribute="trailing" id="72k-CD-7M5"/>
+                            <constraint firstItem="dKq-gk-Zyr" firstAttribute="top" secondItem="1RX-Ax-RLj" secondAttribute="top" id="Byo-aH-IFt"/>
+                            <constraint firstItem="dKq-gk-Zyr" firstAttribute="centerX" secondItem="1RX-Ax-RLj" secondAttribute="centerX" id="DBQ-Cn-IYA"/>
+                            <constraint firstItem="dKq-gk-Zyr" firstAttribute="height" secondItem="1RX-Ax-RLj" secondAttribute="height" multiplier="0.1" id="DiU-p6-A0S"/>
+                            <constraint firstItem="jrL-0z-co9" firstAttribute="top" secondItem="dKq-gk-Zyr" secondAttribute="bottom" id="sz5-lL-zel"/>
+                            <constraint firstItem="1ef-bu-dZQ" firstAttribute="bottom" secondItem="jrL-0z-co9" secondAttribute="bottom" id="yRV-PY-FOj"/>
+                            <constraint firstItem="dKq-gk-Zyr" firstAttribute="width" secondItem="1RX-Ax-RLj" secondAttribute="width" id="yva-MP-O3Y"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="1ef-bu-dZQ"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ijz-WU-6kJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="48" y="-655"/>
+            <point key="canvasLocation" x="798.75" y="-293.66197183098592"/>
         </scene>
         <!--First_Page_VC-->
         <scene sceneID="tne-QT-ifu">
@@ -181,6 +260,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Back_Button" width="50" height="50"/>
         <image name="Drive_Button" width="277" height="50"/>
         <image name="Dropbox_Button" width="277" height="50"/>
         <image name="Files_Button" width="277" height="50"/>
