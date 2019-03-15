@@ -109,6 +109,39 @@ extension Dropbox_File_Browser_VC: UITableViewDelegate, UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.setup_file_browser_table_view(current_object_id: self.currentObject.children_ids[indexPath.row])
+        // Obtaining selected Dropbox object
+        let dropbox_object = self.dropbox_file_browser.directory[self.currentObject.children_ids[indexPath.row]]
+        
+        // Select action based on Dropbox object type
+        switch dropbox_object.type {
+        case .Folder:
+            self.setup_file_browser_table_view(current_object_id: self.currentObject.children_ids[indexPath.row])
+        case .CSV_File:
+            self.present_file_confimation_alert_view_controller()
+        case . Unknown:
+            self.present_incorrect_file_alert_view_controller()
+        }
+       
+    }
+    
+    func present_file_confimation_alert_view_controller(){
+        let alert_view_controller = UIAlertController(title: "Does this file contain your presentations?", message: nil, preferredStyle: .alert)
+        
+        let alert_action_one = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+        alert_view_controller.addAction(alert_action_one)
+        
+        let alert_action_two = UIAlertAction(title: "Continue", style: .default, handler: nil)
+        alert_view_controller.addAction(alert_action_two)
+        
+        present(alert_view_controller, animated: true, completion: nil)
+    }
+    
+    func present_incorrect_file_alert_view_controller(){
+        let alert_view_controller = UIAlertController(title: "Invalid File", message: "Presentation files are of type .csv", preferredStyle: .alert)
+        
+        let alert_action = UIAlertAction(title: "Continue", style: .default, handler: nil)
+        alert_view_controller.addAction(alert_action)
+        
+        present(alert_view_controller, animated: true, completion: nil)
     }
 }
