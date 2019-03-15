@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Initializing Dropbox client
         // (Required to be able to use Dropbox API)
-        DropboxClientsManager.setupWithAppKey("n03ro725l8dmq3x")
+        DropboxClientsManager.setupWithAppKey("APP-KEY")
         
         return true
     }

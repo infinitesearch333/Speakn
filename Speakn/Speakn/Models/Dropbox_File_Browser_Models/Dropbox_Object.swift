@@ -15,14 +15,14 @@ class Dropbox_Object {
         case Unknown    // Objects with no extension bui do not have any children (Ex: Files with no extensions)
     }
     
-    var id: UInt32
+    var id: Int
     var path: String
     var type: Object_Type
-    var parent_id: UInt32?
-    var children_ids: [UInt32]
+    var parent_id: Int?
+    var children_ids: [Int]
     
     
-    init(id: UInt32, path: String, type: Object_Type, parent_id: UInt32?) {
+    init(id: Int, path: String, type: Object_Type, parent_id: Int?) {
         self.id = id
         self.path = path
         self.type = type

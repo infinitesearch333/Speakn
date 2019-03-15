@@ -13,9 +13,6 @@
         <array key="Ubuntu-L.ttf">
             <string>Ubuntu-Light</string>
         </array>
-        <array key="Ubuntu-R.ttf">
-            <string>Ubuntu</string>
-        </array>
     </customFonts>
     <scenes>
         <!--Dropbox File BrowserVC-->
@@ -26,7 +23,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dKq-gk-Zyr" userLabel="Top_Bar">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uYa-06-V9S" userLabel="File_Browser_Table_View_Background">
+                                <rect key="frame" x="0.0" y="73.666666666666686" width="414" height="662.33333333333326"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Folder is empty" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JQ3-lj-mSx">
+                                        <rect key="frame" x="0.0" y="318" width="414" height="26.333333333333314"/>
+                                        <fontDescription key="fontDescription" name="Ubuntu-Light" family="Ubuntu" pointSize="18"/>
+                                        <color key="textColor" red="0.60392156862745094" green="0.58039215686274503" blue="0.58039215686274503" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="JQ3-lj-mSx" firstAttribute="height" secondItem="uYa-06-V9S" secondAttribute="height" multiplier="0.04" id="4fQ-h6-97H"/>
+                                    <constraint firstItem="JQ3-lj-mSx" firstAttribute="width" secondItem="uYa-06-V9S" secondAttribute="width" id="UMJ-qz-Nqo"/>
+                                    <constraint firstItem="JQ3-lj-mSx" firstAttribute="centerX" secondItem="uYa-06-V9S" secondAttribute="centerX" id="aSq-KZ-Y4H"/>
+                                    <constraint firstItem="JQ3-lj-mSx" firstAttribute="centerY" secondItem="uYa-06-V9S" secondAttribute="centerY" id="w94-KM-zAm"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dKq-gk-Zyr" userLabel="Navigation_Bar">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="73.666666666666671"/>
                                 <subviews>
                                     <button contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gOY-jW-ujo" userLabel="Back_Button">
@@ -34,6 +49,9 @@
                                         <state key="normal" backgroundImage="Back_Button">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="back_button_pressed:" destination="OiT-Oi-dfE" eventType="touchUpInside" id="rsQ-wn-PUN"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dropbox" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="Ivt-8G-qxj">
                                         <rect key="frame" x="49.666666666666657" y="34" width="364.33333333333337" height="28.666666666666671"/>
@@ -54,11 +72,11 @@
                                     <constraint firstItem="Ivt-8G-qxj" firstAttribute="centerY" secondItem="gOY-jW-ujo" secondAttribute="centerY" constant="-2" id="z8J-lc-HXf"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jrL-0z-co9" userLabel="File_Browser">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jrL-0z-co9" userLabel="File_Browser_Table_View">
                                 <rect key="frame" x="0.0" y="73.666666666666686" width="414" height="662.33333333333326"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Dropbox_Object_Cell" rowHeight="60" id="SP1-ds-nxt">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Dropbox_Object_Cell" rowHeight="60" id="SP1-ds-nxt" customClass="Dropbox_Object_Cell" customModule="Speakn" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SP1-ds-nxt" id="Lw1-kW-iJx" userLabel="Dropbox_Object_Cell">
@@ -68,25 +86,30 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QIu-lm-cVh" userLabel="Dropbox_Object_Icon">
                                                     <rect key="frame" x="0.0" y="0.0" width="58" height="59.666666666666664"/>
                                                 </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uih-VZ-Auh">
-                                                    <rect key="frame" x="58" y="0.0" width="356" height="59.666666666666664"/>
-                                                    <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="18"/>
-                                                    <state key="normal" title="Object_Name">
-                                                        <color key="titleColor" red="0.60392156862745094" green="0.58039215686274503" blue="0.58039215686274503" alpha="1" colorSpace="calibratedRGB"/>
-                                                    </state>
-                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdk-Mt-RUS" userLabel="Object_Title">
+                                                    <rect key="frame" x="58" y="21" width="356" height="18"/>
+                                                    <fontDescription key="fontDescription" name="Ubuntu-Light" family="Ubuntu" pointSize="16"/>
+                                                    <color key="textColor" red="0.60392156860000001" green="0.58039215690000001" blue="0.58039215690000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="QIu-lm-cVh" secondAttribute="bottom" id="09j-kX-4DU"/>
                                                 <constraint firstItem="QIu-lm-cVh" firstAttribute="height" secondItem="Lw1-kW-iJx" secondAttribute="height" id="4Qy-lO-NdQ"/>
-                                                <constraint firstAttribute="bottom" secondItem="Uih-VZ-Auh" secondAttribute="bottom" id="Afn-nG-CH1"/>
-                                                <constraint firstAttribute="trailing" secondItem="Uih-VZ-Auh" secondAttribute="trailing" id="P0n-3P-qNG"/>
-                                                <constraint firstItem="Uih-VZ-Auh" firstAttribute="top" secondItem="Lw1-kW-iJx" secondAttribute="top" id="UZj-NO-qq1"/>
-                                                <constraint firstItem="Uih-VZ-Auh" firstAttribute="leading" secondItem="QIu-lm-cVh" secondAttribute="trailing" id="hk0-XW-hFB"/>
+                                                <constraint firstAttribute="trailing" secondItem="hdk-Mt-RUS" secondAttribute="trailing" id="Aof-Ul-5fl"/>
+                                                <constraint firstItem="hdk-Mt-RUS" firstAttribute="centerY" secondItem="QIu-lm-cVh" secondAttribute="centerY" id="V0p-dS-hOv"/>
+                                                <constraint firstItem="hdk-Mt-RUS" firstAttribute="leading" secondItem="QIu-lm-cVh" secondAttribute="trailing" id="gSQ-S7-ety"/>
                                                 <constraint firstItem="QIu-lm-cVh" firstAttribute="leading" secondItem="Lw1-kW-iJx" secondAttribute="leading" id="o8g-mR-mic"/>
                                                 <constraint firstItem="QIu-lm-cVh" firstAttribute="width" secondItem="Lw1-kW-iJx" secondAttribute="width" multiplier="0.14" id="q00-1t-mWp"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <constraints>
+                                            <constraint firstItem="hdk-Mt-RUS" firstAttribute="height" secondItem="SP1-ds-nxt" secondAttribute="height" multiplier="0.3" id="RLu-iu-Xgt"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="icon" destination="QIu-lm-cVh" id="Al4-s8-vhq"/>
+                                            <outlet property="title" destination="hdk-Mt-RUS" id="WZt-FW-Hqc"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -94,16 +117,24 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="jrL-0z-co9" firstAttribute="leading" secondItem="1ef-bu-dZQ" secondAttribute="leading" id="1G0-LT-AG3"/>
+                            <constraint firstItem="1ef-bu-dZQ" firstAttribute="bottom" secondItem="uYa-06-V9S" secondAttribute="bottom" id="1s2-OC-AHy"/>
                             <constraint firstItem="1ef-bu-dZQ" firstAttribute="trailing" secondItem="jrL-0z-co9" secondAttribute="trailing" id="72k-CD-7M5"/>
                             <constraint firstItem="dKq-gk-Zyr" firstAttribute="top" secondItem="1RX-Ax-RLj" secondAttribute="top" id="Byo-aH-IFt"/>
                             <constraint firstItem="dKq-gk-Zyr" firstAttribute="centerX" secondItem="1RX-Ax-RLj" secondAttribute="centerX" id="DBQ-Cn-IYA"/>
                             <constraint firstItem="dKq-gk-Zyr" firstAttribute="height" secondItem="1RX-Ax-RLj" secondAttribute="height" multiplier="0.1" id="DiU-p6-A0S"/>
+                            <constraint firstItem="uYa-06-V9S" firstAttribute="top" secondItem="dKq-gk-Zyr" secondAttribute="bottom" id="Q3B-gW-IKg"/>
+                            <constraint firstItem="uYa-06-V9S" firstAttribute="leading" secondItem="1ef-bu-dZQ" secondAttribute="leading" id="QQM-yl-Bqq"/>
                             <constraint firstItem="jrL-0z-co9" firstAttribute="top" secondItem="dKq-gk-Zyr" secondAttribute="bottom" id="sz5-lL-zel"/>
+                            <constraint firstItem="1ef-bu-dZQ" firstAttribute="trailing" secondItem="uYa-06-V9S" secondAttribute="trailing" id="vsY-MT-Z0l"/>
                             <constraint firstItem="1ef-bu-dZQ" firstAttribute="bottom" secondItem="jrL-0z-co9" secondAttribute="bottom" id="yRV-PY-FOj"/>
                             <constraint firstItem="dKq-gk-Zyr" firstAttribute="width" secondItem="1RX-Ax-RLj" secondAttribute="width" id="yva-MP-O3Y"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1ef-bu-dZQ"/>
                     </view>
+                    <connections>
+                        <outlet property="file_browser_table_view" destination="jrL-0z-co9" id="DV3-SQ-VXd"/>
+                        <outlet property="file_browser_table_view_background" destination="uYa-06-V9S" id="Abc-ur-PWP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ijz-WU-6kJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

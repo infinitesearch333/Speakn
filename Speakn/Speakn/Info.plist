@@ -55,7 +55,7 @@
 		<dict>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>db-n03ro725l8dmq3x</string>
+				<string>APP-KEY</string>
 			</array>
 			<key>CFBundleURLName</key>
 			<string></string>
