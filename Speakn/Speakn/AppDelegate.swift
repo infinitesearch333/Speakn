@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Initializing Dropbox client
         // (Required to be able to use Dropbox API)
-        DropboxClientsManager.setupWithAppKey("DROPBOX_API_KEY")
+        DropboxClientsManager.setupWithAppKey("db-APP_KEY")
         
         return true
     }
@@ -51,9 +51,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let authResult = DropboxClientsManager.handleRedirectURL(url) {
             switch authResult {
             case .success:
-                print("Success! User is logged into Dropbox.")
+                let present_db_file_browser = Notification.Name(rawValue: "present_db_file_browser")
+                NotificationCenter.default.post(name: present_db_file_browser, object: nil)
+                
             case .cancel:
                 print("Authorization flow was manually canceled by user!")
+                
             case .error(_, let description):
                 print("Error: \(description)")
             }
