@@ -72,7 +72,7 @@ class Dropbox_File_Browser_VC: UIViewController {
         
         let action_two = UIAlertAction(title: "Log Out", style: .default)
         { (_) in
-            DropboxClientsManager.authorizedClient = nil
+            DropboxClientsManager.unlinkClients()
             self.dismiss(animated: true, completion: nil)
         }
         
