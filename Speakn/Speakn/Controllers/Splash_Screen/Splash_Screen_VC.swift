@@ -25,7 +25,6 @@ class Splash_Screen_VC: UIViewController {
         let screen_mid_x = self.view.frame.midX
         let screen_mid_y = self.view.frame.midY
         let screen_min_y = self.view.frame.minY
-        let screen_max_y = self.view.frame.maxY
         
         self.mascot_image = UIImageView()
         self.mascot_image.frame.size = CGSize(width: screen_width * 0.2, height: screen_height * 0.11)

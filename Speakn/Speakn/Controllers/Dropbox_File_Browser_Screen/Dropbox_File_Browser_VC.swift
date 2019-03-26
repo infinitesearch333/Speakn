@@ -13,6 +13,7 @@ class Dropbox_File_Browser_VC: UIViewController {
     // MARK: User interface elements
     @IBOutlet weak var file_browser_table_view: UITableView!
     @IBOutlet weak var file_browser_table_view_background: UIView!
+    @IBOutlet weak var parent_folder_label: UILabel!
     
     // MARK: Internal elements
     var dispatch_group: DispatchGroup!
@@ -26,6 +27,8 @@ class Dropbox_File_Browser_VC: UIViewController {
         self.file_browser_table_view.delegate = self
         self.file_browser_table_view.dataSource = self
         self.file_browser_table_view.tableFooterView = UIView()
+        self.file_browser_table_view.backgroundView = self.file_browser_table_view_background
+        self.file_browser_table_view.backgroundView?.isHidden = true
         
         // Setup file browser
         self.dispatch_group = DispatchGroup()
@@ -42,11 +45,22 @@ class Dropbox_File_Browser_VC: UIViewController {
     func setup_file_browser_table_view(current_object_id: Int){
         self.currentObject = self.dropbox_file_browser.directory[current_object_id]
         
-        if self.currentObject.children_ids.count == 0 {
-            self.file_browser_table_view.backgroundView = self.file_browser_table_view_background
+        // Setting up parent folder label
+        let current_object_path = self.currentObject.path.split(separator: "/")
+        
+        if current_object_path.count == 0 {
+            self.parent_folder_label.text = "Dropbox"
             
         } else {
-            self.file_browser_table_view.backgroundView = nil
+            self.parent_folder_label.text = "\(current_object_path[current_object_path.endIndex - 1])"
+        }
+        
+        // Determining if tableview is empty in order to present empty folder message
+        if self.currentObject.children_ids.count == 0 {
+            self.file_browser_table_view.backgroundView?.isHidden = false
+            
+        } else {
+            self.file_browser_table_view.backgroundView?.isHidden = true
         }
         
         self.file_browser_table_view.reloadData()
@@ -72,7 +86,9 @@ class Dropbox_File_Browser_VC: UIViewController {
         
         let action_two = UIAlertAction(title: "Log Out", style: .default)
         { (_) in
+//            DropboxClientsManager.unlinkClients()
             DropboxClientsManager.unlinkClients()
+            
             self.dismiss(animated: true, completion: nil)
         }
         
@@ -122,6 +138,8 @@ extension Dropbox_File_Browser_VC: UITableViewDelegate, UITableViewDataSource {
             self.present_incorrect_file_alert_view_controller()
         }
        
+        // Remove table cell highlight after click
+        self.file_browser_table_view.deselectRow(at: indexPath, animated: false)
     }
     
     func present_file_confimation_alert_view_controller(){

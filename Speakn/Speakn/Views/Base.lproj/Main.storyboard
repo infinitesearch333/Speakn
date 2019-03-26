@@ -89,7 +89,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdk-Mt-RUS" userLabel="Object_Title">
                                                     <rect key="frame" x="58" y="21" width="356" height="18"/>
                                                     <fontDescription key="fontDescription" name="Ubuntu-Light" family="Ubuntu" pointSize="16"/>
-                                                    <color key="textColor" red="0.60392156860000001" green="0.58039215690000001" blue="0.58039215690000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.51290847081218272" green="0.50285144197272813" blue="0.50285144197272813" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -134,6 +134,7 @@
                     <connections>
                         <outlet property="file_browser_table_view" destination="jrL-0z-co9" id="DV3-SQ-VXd"/>
                         <outlet property="file_browser_table_view_background" destination="uYa-06-V9S" id="Abc-ur-PWP"/>
+                        <outlet property="parent_folder_label" destination="Ivt-8G-qxj" id="CRO-4v-Xo2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ijz-WU-6kJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
