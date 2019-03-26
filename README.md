@@ -7,3 +7,9 @@ Presenation management application ...
 __Status: (In Progress)__
 <br>
 Currently integrating Dropbox SDK to access users Dropbox folders and files. 
+
+__Features:__
+</br>
+_Splash Screen_
+</br>
+
