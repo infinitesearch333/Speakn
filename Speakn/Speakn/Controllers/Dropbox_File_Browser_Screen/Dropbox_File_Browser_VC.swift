@@ -19,6 +19,7 @@ class Dropbox_File_Browser_VC: UIViewController {
     var dispatch_group: DispatchGroup!
     var dropbox_file_browser: Dropbox_File_Browser!
     var currentObject: Dropbox_Object!
+    var selected_presentation_file_path: String!
     
     
     override func viewDidLoad() {
@@ -133,7 +134,9 @@ extension Dropbox_File_Browser_VC: UITableViewDelegate, UITableViewDataSource {
         case .Folder:
             self.setup_file_browser_table_view(current_object_id: self.currentObject.children_ids[indexPath.row])
         case .CSV_File:
-            self.present_file_confimation_alert_view_controller()
+            let dropbox_object_id = self.currentObject.children_ids[indexPath.row]
+            self.present_file_confimation_alert_view_controller(selected_dropbox_object_id: dropbox_object_id)
+            
         case . Unknown:
             self.present_incorrect_file_alert_view_controller()
         }
@@ -142,13 +145,17 @@ extension Dropbox_File_Browser_VC: UITableViewDelegate, UITableViewDataSource {
         self.file_browser_table_view.deselectRow(at: indexPath, animated: false)
     }
     
-    func present_file_confimation_alert_view_controller(){
+    func present_file_confimation_alert_view_controller(selected_dropbox_object_id: Int){
         let alert_view_controller = UIAlertController(title: "Does this file contain your presentations?", message: nil, preferredStyle: .alert)
         
         let alert_action_one = UIAlertAction(title: "Cancel", style: .default, handler: nil)
         alert_view_controller.addAction(alert_action_one)
         
-        let alert_action_two = UIAlertAction(title: "Continue", style: .default, handler: nil)
+        let alert_action_two = UIAlertAction(title: "Continue", style: .default)
+        { (_) in
+            self.selected_presentation_file_path = self.dropbox_file_browser.directory[selected_dropbox_object_id].path
+            self.performSegue(withIdentifier: "Presentation_Setup_Loading_Screen_Segue", sender: nil)
+        }
         alert_view_controller.addAction(alert_action_two)
         
         present(alert_view_controller, animated: true, completion: nil)
@@ -161,5 +168,10 @@ extension Dropbox_File_Browser_VC: UITableViewDelegate, UITableViewDataSource {
         alert_view_controller.addAction(alert_action)
         
         present(alert_view_controller, animated: true, completion: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destination_view_controller = segue.destination as! Presentation_Setup_Loading_Screen_VC
+        destination_view_controller.presentations_file_path = self.selected_presentation_file_path
     }
 }
